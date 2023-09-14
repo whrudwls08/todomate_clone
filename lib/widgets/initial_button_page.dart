@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SignPage extends StatelessWidget {
-  const SignPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key, required this.AppTitle});
+  final String AppTitle;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -11,8 +12,8 @@ class SignPage extends StatelessWidget {
           elevation: 2,
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
-          title: const Text(
-            '가입하기',
+          title: Text(
+            AppTitle,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
@@ -106,10 +107,10 @@ class SignPage extends StatelessWidget {
                           color: Colors.white,
                           // 이메일 양식, 비밀번호 양식에 맞으면 white로 변하는 로직 구현 예정
                         ),
-                      )
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
