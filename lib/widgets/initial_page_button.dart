@@ -31,6 +31,7 @@ class InitialButton extends StatelessWidget {
                   },
                   style: TextButton.styleFrom(
                     minimumSize: Size.zero,
+                    backgroundColor: Color.fromARGB(31, 189, 189, 189),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
                   child: Text(
