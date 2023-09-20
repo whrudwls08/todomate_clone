@@ -32,41 +32,45 @@ class TodoMain extends StatelessWidget {
             ),
             Row(
               children: [
-                Column(
-                  children: [
-                    Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                      // padding: EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 22, 21, 21),
-                      ),
-                      child: SizedBox(
-                        height: 45,
-                        width: 45,
-                        child: IconButton(
-                          padding: EdgeInsets.zero,
-                          icon: Icon(
-                            Icons.account_circle_rounded,
-                            color: Colors.white,
-                          ),
-                          onPressed: null,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    // padding: ,
+                    // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    // padding: EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 22, 21, 21),
+                    ),
+                    child: SizedBox(
+                      height: 45,
+                      width: 45,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        icon: Icon(
+                          Icons.account_circle_rounded,
+                          color: Colors.white,
                         ),
+                        onPressed: null,
                       ),
                     ),
-                  ],
-                ),
-                Text(
-                  'me',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
                   ),
                 ),
-                Column(
-                  children: [
-                    IconButton(
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'me',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
                       padding: EdgeInsets.zero,
                       icon: Icon(
                         Icons.adb_rounded,
@@ -74,10 +78,65 @@ class TodoMain extends StatelessWidget {
                       ),
                       onPressed: null,
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '2023년 9월 4주차',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      IconButton(
+                        padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),
+                        iconSize: 16,
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.arrow_back_ios_new_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),
+                        iconSize: 16,
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        width: 40,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          // shape: BoxShape.circle,
+                          color: Color.fromARGB(255, 22, 21, 21),
+                        ),
+                        child: Text(
+                          '주',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       );
